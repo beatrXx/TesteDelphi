@@ -1,0 +1,111 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Cadastro de Clientes'
+  ClientHeight = 302
+  ClientWidth = 505
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Connection: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=SQLNCLI11.1;Persist Security Info=False;User ID=sa;Init' +
+      'ial Catalog=cadastro;Data Source=(local);Initial File Name="";Se' +
+      'rver SPN="";password="123456"'
+    LoginPrompt = False
+    Provider = 'SQLNCLI11.1'
+    Left = 32
+    Top = 8
+  end
+  object Qcliente: TADOQuery
+    Connection = Connection
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select * from Cliente')
+    Left = 136
+    Top = 8
+  end
+  object dsCliente: TDataSource
+    DataSet = Mcliente
+    Left = 384
+    Top = 8
+  end
+  object Mcliente: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'Pcliente'
+    AfterPost = MclienteAfterPost
+    AfterCancel = MclienteAfterCancel
+    AfterDelete = MclienteAfterDelete
+    Left = 304
+    Top = 8
+    object MclienteidCliente: TAutoIncField
+      DisplayLabel = 'ID'
+      FieldName = 'idCliente'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object MclientenomeCliente: TStringField
+      DisplayLabel = 'Nome'
+      FieldName = 'nomeCliente'
+      ProviderFlags = [pfInUpdate]
+      Size = 50
+    end
+    object Mclientecnpj: TStringField
+      DisplayLabel = 'CNPJ'
+      FieldName = 'cnpj'
+      ProviderFlags = [pfInUpdate]
+      EditMask = '99.999.999/9999-99;1;_'
+      Size = 100
+    end
+    object MclientedtNascimento: TDateField
+      DisplayLabel = 'Data de Nascimento'
+      FieldName = 'dtNascimento'
+      ProviderFlags = [pfInUpdate]
+      EditMask = '!99/99/00;1;_'
+    end
+    object Mclienteendereco: TStringField
+      DisplayLabel = 'Endere'#231'o'
+      FieldName = 'endereco'
+      ProviderFlags = [pfInUpdate]
+      Size = 500
+    end
+    object Mclientecep: TStringField
+      DisplayLabel = 'CEP'
+      FieldName = 'cep'
+      ProviderFlags = [pfInUpdate]
+      EditMask = '99999-999;1;_'
+      Size = 100
+    end
+    object Mclientenumero: TIntegerField
+      DisplayLabel = 'N'#250'mero'
+      FieldName = 'numero'
+      ProviderFlags = [pfInUpdate]
+    end
+    object Mclientecomplemento: TStringField
+      DisplayLabel = 'Complemento'
+      FieldName = 'complemento'
+      ProviderFlags = [pfInUpdate]
+      Size = 500
+    end
+    object Mclienteemail: TStringField
+      DisplayLabel = 'E-mail'
+      FieldName = 'email'
+      ProviderFlags = [pfInUpdate]
+      Size = 100
+    end
+  end
+  object Pcliente: TDataSetProvider
+    DataSet = Qcliente
+    Left = 216
+    Top = 8
+  end
+end
