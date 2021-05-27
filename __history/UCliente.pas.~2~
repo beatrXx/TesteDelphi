@@ -54,7 +54,6 @@ type
     DBEdit8: TDBEdit;
     Label9: TLabel;
     DBEdit9: TDBEdit;
-    FlowPanel1: TFlowPanel;
     procedure MclienteAfterPost(DataSet: TDataSet);
     procedure MclienteAfterDelete(DataSet: TDataSet);
     procedure MclienteAfterCancel(DataSet: TDataSet);
@@ -101,7 +100,7 @@ end;
 
 procedure TForm1.btExcluirClick(Sender: TObject);
 begin
-   if Application.MessageBox (PChar ('Deseja excluir o arquivo?'), 'ConfirmaÃ§Ã£o', MB_USEGLYPHCHARS + MB_DEFBUTTON2) = mrYes  then
+   if Application.MessageBox (PChar ('Deseja excluir o arquivo?'), 'Confirmação', MB_USEGLYPHCHARS + MB_DEFBUTTON2) = mrYes  then
    begin
      MCliente.delete;
      StatusBarra(Mcliente);

@@ -54,6 +54,9 @@ type
     DBEdit8: TDBEdit;
     Label9: TLabel;
     DBEdit9: TDBEdit;
+    FlowPanel1: TFlowPanel;
+    Dados: TGroupBox;
+    Residência: TGroupBox;
     procedure MclienteAfterPost(DataSet: TDataSet);
     procedure MclienteAfterDelete(DataSet: TDataSet);
     procedure MclienteAfterCancel(DataSet: TDataSet);

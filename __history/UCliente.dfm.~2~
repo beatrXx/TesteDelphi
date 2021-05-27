@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Cadastro de Clientes'
-  ClientHeight = 360
+  ClientHeight = 294
   ClientWidth = 648
   Color = 8529948
   Font.Charset = DEFAULT_CHARSET
@@ -81,9 +81,9 @@ object Form1: TForm1
     Left = 0
     Top = 23
     Width = 337
-    Height = 296
+    Height = 271
     Align = alLeft
-    Color = 6986751
+    Color = 7314943
     Enabled = False
     ParentBackground = False
     TabOrder = 1
@@ -251,7 +251,7 @@ object Form1: TForm1
     Left = 337
     Top = 23
     Width = 311
-    Height = 296
+    Height = 271
     Align = alClient
     Color = clSilver
     DataSource = dsCliente
@@ -310,17 +310,6 @@ object Form1: TForm1
         FieldName = 'CPF'
         Visible = True
       end>
-  end
-  object FlowPanel1: TFlowPanel
-    Left = 0
-    Top = 319
-    Width = 648
-    Height = 41
-    Align = alBottom
-    TabOrder = 3
-    ExplicitLeft = 343
-    ExplicitTop = 248
-    ExplicitWidth = 185
   end
   object Connection: TADOConnection
     Connected = True
